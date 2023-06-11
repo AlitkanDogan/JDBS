@@ -38,6 +38,8 @@ public class JDBC_Query_3 {
         while(rs1.next()) {
             System.out.println(rs1.getInt("patient_id") +" - - "+ rs1.getInt("amount"));
         }
+        rs.close();
+        st.close();
 
     }
 }

@@ -17,6 +17,7 @@ public class JDBC_Query_2 {
 
         rs.next();
         System.out.println(rs.getString("name")+" - "+ rs.getInt("id"));
+        System.out.println(rs.getString(2)+" - "+rs.getString(7)+" - "+rs.getString(10));
       //  System.out.println(rs.getInt(2)+" "+ rs.getString(1));
 
         rs.next();
@@ -29,5 +30,9 @@ public class JDBC_Query_2 {
 
         rs.absolute(1);
         System.out.println(rs.getString("name")+" - "+ rs.getInt("id"));
+
+        rs.close();
+        st.close();
+
     }
 }

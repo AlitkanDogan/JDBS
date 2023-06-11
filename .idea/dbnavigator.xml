@@ -13,22 +13,77 @@
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="8b2e646a-c4a1-488f-b564-7b6305761ae9">
-      <console name="heallife" type="STANDARD" schema="heallife_hospitaltraining" session="Main" />
+      <console name="heallife" type="STANDARD" schema="heallife_hospitaltraining" session="Main"><![CDATA[select
+    r.created_at,
+    r.id,
+    r.is_active,
+    r.is_superadmin,
+    r.is_system,
+    r.name,
+    r.slug
+from
+    roles r;
+
+select
+    cf.content_id,
+    cf.created_at,
+    cf.id,
+    cf.role,
+    cf.user_id
+from
+    content_for cf;
+
+select
+    cu.created_at,
+    cu.id,
+    cu.is_active,
+    cu.unit
+from
+    charge_units cu;
+
+select
+    a.amount,
+    a.appointment_status,
+    a.case_reference_id,
+    a.created_at,
+    a.`date`,
+    a.doctor,
+    a.global_shift_id,
+    a.id,
+    a.is_ipd,
+    a.is_opd,
+    a.is_queue,
+    a.live_consult,
+    a.message,
+    a.patient_id,
+    a.priority,
+    a.shift_id,
+    a.source,
+    a.specialist,
+    a.`time`,
+    a.visit_details_id
+from
+    appointment a;
+
+select * from staff;]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseEditorStateManager">
     <last-used-providers />
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files>
-      <object connection-id="8b2e646a-c4a1-488f-b564-7b6305761ae9" object-ref="schemas/heallife_hospitaltraining/tables/death_report" />
-    </open-files>
+    <open-files />
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
     <filter-actions connection-id="8b2e646a-c4a1-488f-b564-7b6305761ae9" dataset="heallife_hospitaltraining.complaint" active-filter-id="EMPTY_FILTER">
       <filter id="06e08cc4-e605-4eaa-b801-90917c9b18fd" name="id sorgu" temporary="false" custom-name="true" type="basic" join-type="AND">
         <condition column="id" operator="=" value="1" active="true" />
         <condition column="id" operator="=" value="2" active="true" />
+      </filter>
+    </filter-actions>
+    <filter-actions connection-id="8b2e646a-c4a1-488f-b564-7b6305761ae9" dataset="heallife_hospitaltraining.bed_group" active-filter-id="d8260306-5806-4a6c-aa53-0b1479db5307">
+      <filter id="d8260306-5806-4a6c-aa53-0b1479db5307" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND">
+        <condition column="color" operator="=" value="" active="true" />
       </filter>
     </filter-actions>
     <filter-actions connection-id="8b2e646a-c4a1-488f-b564-7b6305761ae9" dataset="heallife_hospitaltraining.blood_bank_products" active-filter-id="" />
@@ -52,6 +107,9 @@
     <filter-actions connection-id="8b2e646a-c4a1-488f-b564-7b6305761ae9" dataset="heallife_hospitaltraining.charges" active-filter-id="" />
     <filter-actions connection-id="8b2e646a-c4a1-488f-b564-7b6305761ae9" dataset="heallife_hospitaltraining.zoom_settings" active-filter-id="" />
     <filter-actions connection-id="8b2e646a-c4a1-488f-b564-7b6305761ae9" dataset="heallife_hospitaltraining.appoint_priority" active-filter-id="" />
+  </component>
+  <component name="DBNavigator.Project.ExecutionManager">
+    <retain-sticky-names value="false" />
   </component>
   <component name="DBNavigator.Project.ObjectQuickFilterManager">
     <last-used-operator value="EQUAL" />

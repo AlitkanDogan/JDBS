@@ -35,6 +35,7 @@ public class JDBC_Query_1 {
 
         rs.next();
         System.out.println(rs.getString("name"));
-
+        rs.close();
+        st.close();
     }
 }
